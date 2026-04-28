@@ -1,0 +1,5 @@
+*.exe
+.vscode/
+a.out
+__pycache__
+Lab_Manuals
