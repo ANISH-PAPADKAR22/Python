@@ -1,0 +1,1099 @@
+# ===============================================
+# 19_num_clear.py - List Clear Operation
+# ===============================================
+num1=[10,20,30,40]
+num2=[50,60,70,80]
+num1.clear()
+print(num1)
+'''
+OUTPUT:-
+[]
+'''
+
+# ===============================================
+# 20_num_add_.py - List Element Update
+# ===============================================
+num1=[10,20,30,40]
+num2=[50,60,70,80]
+num1[2]=60
+print(num1)
+'''
+OUTPUT:-
+[10, 20, 60, 40]
+'''
+
+# ===============================================
+# 21_max_list.py - Max, Min, Sum Functions
+# ===============================================
+numbers=[10,20,50,40]
+print("Max numbers",max(numbers))
+print("Min numbers",min(numbers))
+print("total Sum:",sum(numbers))
+'''
+OUTPUT:-
+Max numbers 50
+Min numbers 10
+total Sum: 120
+'''
+
+# ===============================================
+# 22_strict_decreasingno.py - Strict Decreasing Numbers
+# ===============================================
+L = int(input())
+R = int(input())
+
+count = 0
+for num in range(L, R + 1):
+    s = str(num)
+    valid = True
+    for i in range(len(s) - 1):
+        if s[i] <= s[i+1]:
+            valid = False
+            break
+    if valid:
+        count += 1
+
+print(count)
+
+# ===============================================
+# 23_set_operations.py - Set Operations
+# ===============================================
+set1 = {10,20,30,40}
+set2 = {50,60,30,80}
+#Union
+A = set1 | set2
+print(A)
+
+'''
+OUTPUT:-
+{70, 40, 10, 80, 50, 20, 60, 30}
+'''
+
+#Intersection
+B = set1 & set2
+print(B)
+
+'''
+OUTPUT:-
+{40, 10, 80, 50, 20, 60, 30}
+{30}
+'''
+
+#Difference
+C = set2 - set1
+D = set1 - set2
+print(C)
+print(D)
+
+'''
+OUTPUT:-
+{80, 50, 60}
+{40, 10, 20}
+'''
+
+#Symmetric Difference
+E= set1 ^ set2
+print(E)
+'''
+OUTPUT:-
+{40, 10, 80, 50, 20, 60}
+'''
+
+#Subset and Superset
+F=set1.issubset(set2)
+G=set1.issuperset(set2)
+print(F)
+print(G)
+'''
+OUTPUT:-
+False
+False
+'''
+
+#Set into listConversion
+List=list(set1)
+print(List)
+'''
+OUTPUT:-
+[40, 10, 20, 30]
+'''
+
+#List into set Conversion
+Set=set(List)
+print(Set)
+
+'''
+OUTPUT:_
+{40, 10, 20, 30}
+'''
+
+find=70
+set1 = list(set1)
+for num in set1:
+    if num==find:
+        print("This number is present")
+        break
+    else:
+        print("This number is not present")
+        break
+
+'''
+OUTPUT:-
+This number is not present
+'''
+
+# ===============================================
+# 24_input_dictionary.py - Input Dictionary
+# ===============================================
+data={}
+n=int(input("Enter the number of key and values"))
+for i in range(n):
+    key=input("Enter the key")
+    value=input("Enter the value")
+    data[key]=value
+print(data)
+
+'''
+OUTPUT:-
+Enter the number of key and values2
+Enter the key6
+Enter the value5
+Enter the key2
+Enter the value6
+{'6': '5', '2': '6'}
+'''
+
+# ===============================================
+# 25_Marks_dictionary.py - Marks Dictionary
+# ===============================================
+marks={}
+n=int(input("Enter the no of key and values"))
+for i in range(n):
+    subject=input("Enter the key")
+    score=int(input("Enter the score"))
+    marks[subject]=score
+print(marks)
+
+'''
+OUTPUT:-
+Enter the no of key and values 1
+Enter the key Anish
+Enter the score65
+{' Anish': 65}
+Enter a key to update Anish
+Enter the new value 75
+Key updated successfully
+updated dictionary is: {' Anish': 75}
+'''
+
+# ===============================================
+# 26_key_update.py - Dictionary Key Update
+# ===============================================
+marks={}
+n=int(input("Enter the no of key and values"))
+for i in range(n):
+    subject=input("Enter the key")
+    score=int(input("Enter the score"))
+    marks[subject]=score
+print(marks)
+new_key=input("Enter a key to update")
+if new_key in marks:
+    new_value=int(input("Enter the new value"))
+    #marks[new_key]=new_value
+    marks.update({new_key:new_value})
+    print("Key updated successfully")
+else:
+    print("Key Not found")
+print("updated dictionary is:",marks)
+'''
+1st OUTPUT:-(    #marks[new_key]=new_value
+)
+Enter the no of key and values 1
+Enter the key Anish
+Enter the score65
+{' Anish': 65}
+Enter a key to update Anish
+Enter the new value 75
+Key updated successfully
+updated dictionary is: {' Anish': 75}
+'''
+'''
+2nd OUTPUT:-(marks.update({new_key:new_value}))
+Enter the no of key and values 2
+Enter the keyAnish
+Enter the score95
+Enter the keyAnurag
+Enter the score90
+{'Anish': 95, 'Anurag': 90}
+Enter a key to updateAnurag
+Enter the new value99
+Key updated successfully
+updated dictionary is: {'Anish': 95, 'Anurag': 99}'''
+
+# ===============================================
+# 27_count to_dictionary.py - Character Count
+# ===============================================
+'''
+input
+count the occurrence of each character in a string and
+display in dictionary'''
+file=input("Enter the string")
+char_count={}
+for char in file:
+    if char in char_count:
+        char_count[char]+=1
+    else:
+        char_count[char]=1
+print("Character count is:", char_count)
+for char, count in char_count.items():
+    print(f"Character '{char}' occurs {count} times") 
+'''
+OUTPUT:-
+Enter the string Anish Papadkar
+Character count is: {' ': 2, 'A': 1, 'n': 1, 'i': 1, 's': 1, 'h': 1, 'P': 1, 'a': 3, 'p': 1, 'd': 1, 'k': 1, 'r': 1}
+Character ' ' occurs 2 times
+Character 'A' occurs 1 times
+Character 'n' occurs 1 times
+Character 'i' occurs 1 times
+Character 's' occurs 1 times
+Character 'h' occurs 1 times
+Character 'P' occurs 1 times
+Character 'a' occurs 3 times
+Character 'p' occurs 1 times
+Character 'd' occurs 1 times
+Character 'k' occurs 1 times
+Character 'r' occurs 1 times
+'''
+
+# ===============================================
+# 28_count.numbers.py - Count Alphanumeric
+# ===============================================
+SI="My number is 425678489"
+count=0
+for char in SI:
+    #if char.isdigit():
+    #if char.isalpha():
+    if char.isalnum():
+        count+=1
+    
+print("The number of digits in the string is:", count)
+#OUTPUT:-The number of digits in the string is: 9
+#OUTPUT:-The number of digits in the string is: 10
+#OUTPUT:-The number of digits in the string is: 19
+
+# ===============================================
+# 29_nested_dictionaary.py - Nested Dictionary
+# ===============================================
+myfamily={"Child1":{"Name":"Anish","Age":18,"Year":2007},
+          "Child2":{"Name":"Anurag","Age":14,"Year":2011}}
+print(myfamily)
+print(myfamily["Child1"]["Name"])
+print(myfamily["Child1"]["Age"])
+print(myfamily["Child2"]["Name"])
+print(myfamily["Child2"]["Year"])
+x=child1={"Name":"Anish","Age":18,"Year":2007}
+for x,object in myfamily.items():
+    print(object["Name"])
+    for y,object in myfamily.items():
+        print(object["Age"])
+'''
+OUTPUT:-
+{'Child1': {'Name': 'Anish', 'Age': 18}}
+Anish
+18
+Anurag
+14
+'''
+
+# ===============================================
+# 30_Functions.py - Functions and Lambda
+# ===============================================
+def add(a, b):
+    return a + b
+
+print(add(5, 6))
+
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+print(factorial(5))
+
+square = lambda x:x * x
+num = int(input("Input the number:"))
+result = (square(num))
+print("square of the number is :",result)
+'''
+Output:-
+11
+120
+'''
+
+# ===============================================
+# 31_sum_and_avg.py - Sum and Average with Args
+# ===============================================
+#Write a function that accepts any number of arguments and returns the sum and average of those numbers.
+'''def sum_avg(*args):
+    total = 0
+    avg = total/len(args)
+    for num in args:
+        total+=num
+        avg = total/len(args)
+    return total
+print("sum is :", sum_avg(5, 15))
+print("average is:", sum_avg(5, 15)/2)
+
+OUTPUT:-
+sum is : 20
+average is: 10.0
+'''
+def sum_avg(*args):
+    total = 0
+    avg = total/len(args)
+    return args
+num = int(input("Enter the number of elements: "))
+num_list = list(map(int, input("Enter the numbers: ").split()))
+result = sum_avg(*num_list)
+print("Sum is:", result)
+'''
+OUTPUT:-
+Enter the number of elements: 3
+Enter the numbers: 1 2 3
+Sum is: (6, 2.0)
+'''
+'''
+OUTPUT:-
+Enter the number of elements: 3 
+Enter the numbers: 1 2 3 
+Sum is: (1, 2, 3)
+'''
+
+# ===============================================
+# 32_args_and_kwargs.py - Args and Kwargs
+# ===============================================
+#Demonstrate the use of *args and **kwargs in Python functions.
+def demo(*args, **kwargs):
+    print("Arguments passed using *args:", args)
+    print("Arguments passed using **kwargs:", kwargs)
+
+demo(10,20,30,name = "DjAlok", City = "Pune")
+
+def stud_info(*args, **kwargs):
+    print("Subjects:")
+    for student in args:
+        print(student)
+    print("Student Details:")
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+subjects = input("Enter the subjects: ").split()
+name = input("Student name: ")
+age = input("Student age: ")
+city = input("Student city: ")
+stud_info(*subjects, name=name, age=age, city=city)
+
+'''
+OUTPUT:-
+ Enter the subjects: ctp
+ Student name: Gadhe
+ Student age: 18
+Student city: pune
+ Subjects:
+ ctp
+ Student Details:
+  name: Gadhe
+ age: 18
+ city: pune
+    '''
+
+# ===============================================
+# 33_filter_function.py - Filter Function
+# ===============================================
+numbers = [10,11,15,20,37,30,35,40]
+even_numbers = list(filter(lambda x:x%2 == 0,numbers)) #lambda = Temporary variable decln
+odd_numbers = list(filter(lambda x:x%2!= 0,numbers))
+print("Orignal List",numbers)
+print("Even Numbers",even_numbers)
+print("Odd Numbers",odd_numbers)
+'''
+Output:
+Orignal List [10, 15, 20, 35, 30, 35, 40]
+Even Numbers [10, 20, 30, 40]
+Odd Numbers [11, 15, 37, 35]
+'''
+
+# ===============================================
+# 34_reduce_function_from_functools.py - Reduce
+# ===============================================
+from functools import reduce
+numbers = [1,2,3,4,5]
+total = reduce(lambda x,y : x+y,numbers)
+print(total)
+'''
+OUTPUT:-
+15
+'''
+
+# ===============================================
+# 35_Args.py - Variable Arguments
+# ===============================================
+def add_numbers(*args):  #Arguments are stored in tuple
+    print(args)
+    print("Sum:",sum(args))
+
+
+add_numbers(10.6,20,31.2)
+
+'''
+OUTPUT:-
+(10, 20, 30)
+Sum: 60
+
+(10.6, 20, 31.2)
+Sum: 61.8
+'''
+
+# ===============================================
+# 36_avg_arg.py - Average with Args
+# ===============================================
+def find_average(*args):
+    avg=sum(args) / len(args)
+    return avg
+
+print(find_average(10,20,30,40))
+
+'''
+OUTPUT:-\25.0
+'''
+
+# ===============================================
+# 37_Both_args.py - Args and Kwargs Combined
+# ===============================================
+def display_info(*args,**kwargs):
+    print("Arguments:",args)
+    print("Keyword Arguments:",kwargs)
+
+display_info(10, 20, 30, name = "Modi", role = "PM")
+'''
+OUTPUT:-
+Arguments: (10, 20, 30)
+Keyword Arguments: {'name': 'Modi', 'role': 'PM'}
+'''
+
+# ===============================================
+# 38_use_of_own_module.py - Custom Module Usage
+# ===============================================
+#Creating Module files
+def add(a,b):
+    return a+b
+
+def sub(a,b):
+    return a-b
+
+def multi(a,b):
+    return a*b
+
+def div(a,b):
+    return a/b
+
+import math_utils
+
+print(math_utils.add(6,7))
+print(math_utils.sub(6,7))
+print(math_utils.multi(6,7))
+print(math_utils.div(6,7))
+
+# ===============================================
+# 39_random.py - Random Module
+# ===============================================
+import random
+
+print("Random Integer:",random.randint(1,100))  #randint():Random Number between range
+print("Random Float:",random.random())  #random():Random decimal number
+list1 = [1,2,3,4,5] 
+print("Random Choice From List:",random.choice(list1))  #choice():Random element from a list
+
+'''
+OUTPUT:-
+Random Integer: 88
+Random Float: 0.0793376697101682
+Random Choice From List: 4
+'''
+
+# ===============================================
+# 40_os_module.py - OS Module
+# ===============================================
+import os
+print("CurrentDirectory:",os.getcwd)        #getcwd():Current Working Directory
+print("Files in Directory:",os.listdir())   #listdir():List of files and folders in current directory
+os.mkdir("NewFolder")                       #mkdir():Create a new directory
+
+'''
+OUTPUT:-
+Files in Directory: ['0.warmup.py', '10_String.py', '11_vow_cons.py', '12_Corrdinate.py', '13_Count.py', '14_num_pyramid.py', '15_Lists.py', '16_Fibonacci.py', '17_string_list.py', '18_num_pop.py', '19_num_clear.py', '1_aggre_marks.py', '20_num_add_.py', '21_max_list.py', '22_strict_decreasingno.py', '23_set_operations.py', '24_input_dictionary.py', '25_Marks_dictionary.py', '26_key_update.py', '27_count to_dictionary.py', '28_count.numbers.py', '29_nested_dictionaary.py', '2_Amount.py', '30_Functions.py', '31_sum_and_avg.py', '32_args_and_kwargs.py', '33_filter_function.py', '34_reduce_function_from_functools.py', '35_Args.py', '36_avg_arg.py', '37_Both_args.py', '38_use_of_own_module.py', '39_random.py', '3_Salary.py', '40_os_module.py', '4_cp_1item.py', '5_Area.py', '6_Days.py', '6_Power_sqrt.py', '7_Reverse.py', '8_palindrome.py', '9_Slicing.py', 'CTPL_LAB MANUAL_GROUP C_UNIT 3.pdf', 'math_utils.py', '__pycache__']
+'''
+
+# ===============================================
+# 41_Using_Datetime_module.py - DateTime Module
+# ===============================================
+from datetime import datetime
+now = datetime.now()  # Get the current date and time
+print("Current Date and Time:", now)
+
+date1 = datetime(2007,9,22)
+date2 = datetime(2011,9,22)
+
+difference = date2 - date1
+print("Difference:",difference)
+
+# ===============================================
+# 42_Using_stats_module.py - Statistics Module
+# ===============================================
+import statistics
+
+
+data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+print("Mean:", statistics.mean(data))  # mean():Average of the data
+print("Median:", statistics.median(data))  # median():Middle value of the data
+print("Mode:", statistics.mode(data))  # mode():Most common value in the data
+'''
+OUTPUT:-
+Mean: 5.5
+Median: 5.5
+Mode: 1
+'''
+
+# ===============================================
+# 43_class.py - Basic Class
+# ===============================================
+class student:
+
+    def setstudent(self):
+        self.roll_no = int(input("Enter the roll no of the student"))
+        self.name = input("Enter the name of student")
+        self.mark1 = int(input("Enter the marks of CTP"))
+        self.mark2 = int(input("Enter the marks of PSP"))
+        
+    def printstudent(self):
+        print(self.roll_no)
+        print(self.name)
+        print(self.mark1)
+        print(self.mark2)
+        
+s1 = student()
+s1.setstudent()
+s1.printstudent()
+
+s2 = student()
+s2.setstudent()
+s2.printstudent()
+print(id(s1))
+print(id(s2))
+'''
+OUTPUT:-
+Enter the roll no of the student 2
+Enter the name of studentDiva
+Enter the marks of CTP20
+Enter the marks of PSP21
+2
+Diva
+20
+21
+Enter the roll no of the student5
+Enter the name of studentgadhe
+Enter the marks of CTP25
+Enter the marks of PSP26
+5
+gadhe
+25
+2679364161552
+2679357414560
+'''
+
+# ===============================================
+# 44_bank.py - Employee Class
+# ===============================================
+class employee:
+    def setemployee(self):
+        self.name = input("Enter your name")
+        self.id = int(input("Enter your id"))
+        self.salary = int(input("Enter your salary"))
+    def printemployee(self):
+        print("Name:", self.name)
+        print("ID:", self.id)
+        print("Salary:", self.salary)
+
+e1 = employee()
+e1.setemployee()
+e1.printemployee()
+
+e2 = employee()
+e2.setemployee()
+e2.printemployee()
+'''
+OUTPUT:-
+Enter your name Anish
+Enter your id 4825
+Enter your salary 60000 
+Name:  Anish
+ID: 4825
+Salary: 60000
+Enter your name Ashutosh
+Enter your id 4826
+Enter your salary 69000
+Name:  Ashutosh
+ID: 4826
+Salary: 69000
+'''
+
+# ===============================================
+# 45_classdemo.py - Constructor and Destructor
+# ===============================================
+class Demo:
+    def __init__(self, name):
+        self.name = name
+        print(f"{self.name}created")
+
+    def __del__(self):
+        print(f"{self.name}destroyed")
+
+obj = Demo("Object1")
+del obj
+'''
+OUTPUT:-
+Object1created
+Object1destroyed
+'''
+
+# ===============================================
+# 46_bank_using_construcor_destructor.py - Employee with Constructor
+# ===============================================
+class Employee:
+
+    #Constructor
+    def __init__(self,emp_id,name,salary):
+        self_emp_idd = emp_id
+        self.name = name
+        self.salary = salary
+        print("Employee{self.name}created")
+
+    #Methods to display details
+    def display(self):
+        print("Employee details")
+        print("ID,self_emp_id")
+        print("Name,self.name") 
+        print("Salary,self.salary")
+    
+    #Destructor
+    def __del__(self):
+        print(f"Employee{self.name}deleted")
+
+#Creating objects of Employee class
+emp1 = Employee(101,"Anish",60000)
+emp2 = Employee(102,"Ashutosh",69000)
+
+#Display details
+emp1.display
+emp2.display
+
+#Deleting Objects
+del emp1
+del emp2
+
+# ===============================================
+# 47_inheritance.py - Basic Inheritance
+# ===============================================
+class Parent:
+    def show(self):
+        print("I am the parent class")
+class child(Parent):
+    def display(self):
+        print("I am the child class")  
+obj = child()
+obj.show()
+obj.display()
+
+# ===============================================
+# 48_example_of_inheritance.py - Shape Inheritance
+# ===============================================
+class Shape:
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius ** 2
+
+class Rectangle(Shape):
+    def __init__ (self, length,width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+c = Circle(5)
+r = Rectangle(4,6)
+
+print("Area of Circle: ",c.area())
+print("Area of Rectangle: ",r.area())
+'''
+OUTPUT:-
+Area of Circle:  78.5
+Area of Rectangle:  24
+'''
+
+# ===============================================
+# 49_other_ex_of_inheritance.py - Polymorphism
+# ===============================================
+class Dog:
+    def sound(self):
+        print("Dog Barks")
+class Cat:
+    def sound(self):
+        print("Cat Meows")
+
+for animal in (Dog(), Cat()):
+    animal.sound() 
+
+# ===============================================
+# 50_multiclass.py - Multi-level Inheritance
+# ===============================================
+#Base Class
+class Person:
+    def __init__ (self,name,age):
+        self.name = name
+        self.age = age
+    
+    def display_person(self):
+        print(f"Name: {self.name}, Age: {self.age}")
+
+#Derived Class
+class Employee(Person):
+    def __init__(self, name, age, emp_id,department):
+        super().__init__(name, age)        #
+        self.emp_id = emp_id
+        self.department = department
+
+    def display_employee(self):
+        print(f"Employee ID: {self.emp_id}, Department: {self.department}")
+
+#Further class
+class Manager(Employee):
+    def __init__(self, name, age, emp_id, department, team_size):
+        super().__init__(name, age, emp_id, department) #super() is used to call the constructor of the parent class (Employee) to initialize the inherited attributes (name, age, emp_id, department)
+        self.team_size = team_size
+
+    def display_manager(self):
+        print(f"Team Size: {self.team_size}")
+
+#Demonstration
+manager = Manager("Alex" , 24 , "G105" , "11" , 10)
+
+#Using methods for all the levels
+manager.display_person()      #From Person class 
+manager.display_employee()    #From Employee class
+manager.display_manager()     #From Manager class   
+'''
+OUTPUT:-
+Name: Alex, Age: 24
+Employee ID: G105, Department: 11
+Team Size: 10
+'''
+
+# ===============================================
+# 51_fileHandling.py - File Handling Basics
+# ===============================================
+#Create and write the file
+file = open("example.txt","a")
+file.write("Yookoso Welcome to School of Technology")
+
+#Read File
+file = open("example.txt","r")
+print("Initial content:\n",file.read())
+file.close()
+
+#Append New Line
+file = open("example.txt","a")
+file.write("\nThis is CTPL lab")
+file.close()
+
+#Read UPdated File
+file = open("example.txt","r")
+print("\nUpdates Content:\n",file.read())
+file.close()
+
+# ===============================================
+# 52_FH2.py - File Handling Menu
+# ===============================================
+def create_newfile():
+    print("Creating a new file: ")
+    file_name = input("\nEnter file name: ")
+    file_content = input("\nStart typing the contents")
+    with open(file_name, "w") as file:
+        file.write(file_content)
+        file.close()
+    print("File written successfully")
+
+def read_mode():
+    print("Opening file in read mode")
+    file_name = input("\nEnter file name: ")
+    print("The file contents are as follows: ")
+    print("------------------------------------")
+    with open(file_name, "r") as file:
+        content = file.read()
+        print(content)
+        file.close()
+    print("---------End of File-----------")
+
+def append_mode():
+    file_name = input("\nEnter file name: ")
+    file_content = input("\nStart typing the contents")
+    with open(file_name, "a") as file:
+        file.write(file_content)
+        file.close()
+    print("File written successfully")
+
+while(True):
+    print("Menu:")
+    print("1. Create a new file,fiel in write mode and write into it")
+    print("2. Reopen file in read mode and dislpay the content")
+    print("3. reopen the file in appemnd mode and write into it")
+    print("4. Open the file in read mode and count the frequency of each word")
+    print("5. Exit")
+    print("************************")
+    ch = int(input("Enter your choice"))
+    if ch == 1:
+        create_newfile()
+    elif ch == 2:
+        read_mode()
+    elif ch == 3:
+        append_mode()
+    elif ch == 4:
+    #   Count the frequency of each word
+        count_word_freq()
+    elif ch == 5:
+        break
+    else:
+        print("Wrong Choice! Try Again")
+print("Exiting the program...")
+
+
+'''
+OUTPUT:
+1. Create a new file,fiel in write mode and write into it
+2. Reopen file in read mode and dislpay the content
+3. reopen the file in appemnd mode and write into it
+4. Open the file in read mode and count the frequency of each word
+5. Exit
+************************
+Enter your choice 1
+Creating a new file: 
+
+Enter file name: anish.txt
+
+Start typing the contents kowhfiuiehuajfiad
+File written successfully
+Menu:
+1. Create a new file,fiel in write mode and write into it
+2. Reopen file in read mode and dislpay the content
+3. reopen the file in appemnd mode and write into it
+4. Open the file in read mode and count the frequency of each word
+5. Exit
+************************
+Enter your choice2
+Opening file in read mode
+
+Enter file name: anish.txt
+The file contents are as follows: 
+------------------------------------
+ kowhfiuiehuajfiad
+---------End of File-----------
+'''
+
+# ===============================================
+# 53_FH3.py - File Word Frequency
+# ===============================================
+from collections import Counter
+
+file = open("example.txt","r")
+text = file.read().lower()
+file.close()
+
+words = text.split()
+word_count = Counter(text)
+
+sorted_words = sorted(word_count.items(),key=lambda x:x[1],reverse = True)
+
+print("Word Frequencies :")
+
+for word,count in sorted_words:
+    print(word ,":" ,count)
+
+'''
+OUTPUT:-
+Word Frequencies :
+o : 121
+  : 61
+l : 37
+c : 35
+e : 33
+s : 26
+t : 26
+h : 24
+y : 22
+k : 11
+w : 11
+m : 11
+f : 11
+n : 11
+g : 11
+i : 4
+
+ : 2
+p : 2
+a : 2
+b : 2
+
+Word Frequencies : Gadhe is good boy
+  : 3
+o : 3
+g : 2
+d : 2
+a : 1
+h : 1
+e : 1
+i : 1
+s : 1
+b : 1
+y : 1
+'''
+
+# ===============================================
+# 54_copy_files.py - File Copy with Exception Handling
+# ===============================================
+try:                        #error is probable and it should provide some texts
+    file = open("example.txt","r")
+    text = file.read()
+    file.close()
+    
+    d_file = open("anish.txt","w")
+    d_file.write(text)
+    d_file.close()
+    print("File copied successfully")
+
+    d_file = open("anish.txt","r")
+    content = d_file.read()
+    print(content)
+
+except FileNotFoundError:                       #INBUILD 
+    print("Error:Source does not Exist")
+
+except Exception as e:                          #
+    print("An Unexpected error occured")
+
+'''
+OUTPUT:-
+File copied successfully
+yash is noob 
+
+File copied successfully
+yash is noob and ashu is bot 
+
+Error:Source does not Exist
+'''
+
+# ===============================================
+# 55_file_count.py - IP Address Counting
+# ===============================================
+#cREATE A FILE AND COUNT THE NUMBER OF TIMES EACH IP ADDRESS APPEARS IN THE FILE
+#WRITE A PROGRAM TO EXTRACT UNIQUE IP ADDRESSES AND COUNT THEIR OCCURRENCES
+file = open("access.log","w")
+file.write("2036-04-15 192.168.1.1 /home\n")
+file.write("2036-04-15 192.168.1.2 /about\n")
+file.write("2036-04-15 192.168.1.1 /contact\n")
+
+from collections import Counter
+
+file = open("access.log","r")
+lines = file.readlines()
+file.close()
+
+ips = []
+
+for line in lines:
+    parts = line.split()
+    ips.append(parts[1])
+
+unique_ips = set(ips)
+print("Unique IPs:", unique_ips)
+
+ip_count = Counter(ips)
+print("\nIP Add ress count:")
+for ip, count in ip_count.items():
+    print(ip, ":", count)
+
+'''OUTPUT:-
+IP addresses count:
+192.168.1.1: 2
+192.168.1.2: 1
+
+IP addresses count:
+192.168.1.4: 1
+192.168.1.2: 1
+192.168.1.1: 1
+'''
+
+# ===============================================
+# 56_csvfiles.py - CSV File Operations
+# ===============================================
+#Write CSV files
+import csv
+
+with open("data.csv", "w", newline ="") as file:  #newline is used to avoid blank lines in csv file
+    writer = csv.writer(file)
+    writer.writerow(["Name", "Age", "ID"])
+    writer.writerow(["Alice", 30, "1"])
+    writer.writerow(["Bob", 25, "2"])
+    writer.writerow(["Charlie", 27, "3"])
+    writer.writerow(["David", 22, "4"])
+
+#Read CSV file
+print("CSV Content:")
+with open("data.csv", "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+
+#Search ID
+search_id = input("enter the Id to search: ")
+
+with open("data.csv", "r") as file:
+    reader = csv.reader(file)
+    next(reader)  # Skip header row
+    found = False
+    for row in reader:
+        if row[2] ==search_id:
+            print("Record Found:", row)
+            found = True
+            break
+    if not found:
+        print("Record Not Found")
+
+'''
+OUTPUT:-
+CSV Content:
+['Name', 'Age', 'ID']
+['Alice', '30', '1']
+['Bob', '25', '2']
+['Charlie', '27', '3']
+['David', '22', '4']
+enter the Id to search: 2
+Record Found: ['Bob', '25', '2']
+'''

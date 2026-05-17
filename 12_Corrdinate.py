@@ -3,7 +3,7 @@ x2=float(input(""))
 y1=float(input(""))
 y2=float(input(""))
 if(x2-x1==0):
-    print(undefined)
+    print("Undefined")
 else:
     slope=(y2-y1)/(x2-x1)
 print(round(slope,2))
